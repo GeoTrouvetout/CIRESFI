@@ -443,7 +443,8 @@ def main(args):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="")
+    parser = argparse.ArgumentParser(description="'Launch the Structure-Spotting' using pre-trained weights 'nn-weight_structure-spotting.npz'.")
+    
     parser.add_argument("-w", "--weights",
             dest="weights",
             type=str,
