@@ -3,6 +3,16 @@ see: http://cethefi.org/ciresfi/doku.php?id=en:projet
 
 related to : https://gitlab.univ-nantes.fr/CIRESFI
 
+# Dependencies
+numpy
+pandas
+sklearn
+scipy
+skimage
+matplotlib
+theano
+lasagne
+
 
 # Learn_NWB-spotting-softmax_ce.py
 "Build and Learn a CNN model for structure spotting using artificial document. Artificial document are constructed using the ARTIDOC procedure. "
