@@ -4,14 +4,14 @@ see: http://cethefi.org/ciresfi/doku.php?id=en:projet
 related to : https://gitlab.univ-nantes.fr/CIRESFI
 
 ## Dependencies
-numpy
-pandas
-sklearn
-scipy
-skimage
-matplotlib
-theano
-lasagne
+- numpy
+- pandas
+- sklearn
+- scipy
+- skimage
+- matplotlib
+- theano
+- lasagne
 
 
 ## structure-spotting_NWB_launchOnImage.py
