@@ -14,12 +14,12 @@ related to : https://gitlab.univ-nantes.fr/CIRESFI
 - lasagne
 
 
-## structure-spotting_NWB_launchOnImage.py
+## StructSpotting_FCNN_launchOnImage.py
 "Launch the Structure-Spotting" using pre-trained weights "nn-weight_structure-spotting.npz". 
 
 Usage:
 ```
-./structure-spotting_NWB_launchOnImage.py -w nn-weight_structure-spotting.npz -i image.jpg
+./StructSpotting_NWB_launchOnImage.py -w nn-weight_structure-spotting.npz -i image.jpg
 ```
 
 ## Learn_NWB-spotting-softmax_ce.py
