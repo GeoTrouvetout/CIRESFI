@@ -12,6 +12,7 @@ related to : https://gitlab.univ-nantes.fr/CIRESFI
 - matplotlib
 - theano
 - lasagne
+- Piff (Pivot File Format)
 
 
 ## StructSpotting_FCNN_launchOnImage.py
