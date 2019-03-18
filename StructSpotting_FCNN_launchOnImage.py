@@ -349,7 +349,8 @@ def main(args):
     print(idimg, idcard)
 
     inputs_orig = Image.open( args.idimg ).convert('L')
-
+    #if not args.inzoom == 1:
+    #    inputs_orig = inputs_orig.resize( (int(np.floor(inputs_orig.size[0]*args.inzoom)), int(np.floor(inputs_orig.size[1]*args.inzoom))), Image.ANTIALIAS )
     inputs = PIL.ImageOps.invert(inputs_orig)
 
     oldsize = inputs.size 
@@ -364,13 +365,14 @@ def main(args):
         bfit = True
     else:
         fsy = inputs.size[1]
-        fitsize = (fsx, fsy)
+    fitsize = (fsx, fsy)
     if bfit:
         inputs_fit = inputs.resize( fitsize, Image.ANTIALIAS )
     else:
         inputs_fit = inputs
 
     newsize = ( int(np.floor(fitsize[0]*args.inzoom)), int( np.floor( args.inzoom*fitsize[1] ) ) )
+    #newsize = ( int(np.floor(fitsize[0])), int( np.floor( fitsize[1] ) ) )
     inputs_resized = inputs_fit.resize( newsize , Image.ANTIALIAS )
 
     inputs_pad, prow, pcol = imagePadding(inputs_resized, newsize=(args.insize[0], args.insize[1]) )
@@ -380,15 +382,15 @@ def main(args):
     restensor = eval_img(img.reshape( (1, 1, args.insize[0], args.insize[1]) ))
     mask_out = np.argmax(restensor[0], axis=0)
 
-    mask_out = mask_out[pcol:pcol+inputs.size[1], prow:prow+inputs.size[0] ] 
-    img = img[pcol:pcol+inputs.size[1], prow:prow+inputs.size[0] ] 
-
+    mask_out = mask_out[pcol:pcol+inputs_resized.size[1], prow:prow+inputs_resized.size[0] ] 
+    img = img[pcol:pcol+inputs_resized.size[1], prow:prow+inputs_resized.size[0] ] 
+    
 
     bkgd = mask_out == 0 
     num = mask_out == 1
     wor = mask_out == 2 
-
-    nimg = np.array( PIL.ImageOps.invert(inputs_fit) , dtype=float)
+    print(bkgd.shape, num.shape, wor.shape)
+    nimg = np.array( PIL.ImageOps.invert(inputs_resized) , dtype=float)
     image_array = np.array(np.stack(( wor*nimg ,num*nimg, bkgd*nimg), axis=2), dtype=np.uint8)
     if bfit:
         image_array = np.array( Image.fromarray( image_array ).resize(inputs.size, Image.NEAREST) )
