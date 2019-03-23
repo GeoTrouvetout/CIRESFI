@@ -20,7 +20,7 @@ related to : https://gitlab.univ-nantes.fr/CIRESFI
 
 Usage:
 ```
-./StructSpotting_NWB_launchOnImage.py -w nn-weight_structure-spotting.npz -i image.jpg
+python3 ./StructSpotting_NWB_launchOnImage.py -w nn-weight_structure-spotting.npz -i image.jpg
 ```
 
 ## Learn_NWB-spotting-softmax_ce.py
