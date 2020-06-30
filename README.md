@@ -1,7 +1,14 @@
-# CIRESFI
-see: http://cethefi.org/ciresfi/doku.php?id=en:projet
+# End-to-end Structures Spotting in Unlabeled Handwritten Documents 
 
-related to : https://gitlab.univ-nantes.fr/CIRESFI
+This repository contains the python code to perform structures spotting in handwritten documents. 
+
+This work is based on the paper «Transfer Learning for Structures Spotting in Unlabeled Handwritten Documents using Randomly Generated Documents», International Conference on Pattern Recognition Applications and Methods, 2018. (https://hal.archives-ouvertes.fr/hal-01681114)
+
+In this work, we focus on the localization of structures at the word-level, distinguishing structures *words* from structures *numbers*, in unlabeled handwritten documents. In the related publication, we showed that a transductive transfert learning strategy is able to perform a end-to-end structure spotting. More precisely, we showed that it is possible to construct a coherent map segmentation of word/number/background structure on real documents by using a CNN that was trained on a very large number of Synthetically Generated Documents.
+
+This work is related to the ANR project CIRESFI
+- see: http://cethefi.org/ciresfi/doku.php?id=en:projet
+- related to : https://gitlab.univ-nantes.fr/CIRESFI
 
 ## Dependencies
 - numpy
